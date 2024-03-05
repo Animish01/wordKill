@@ -1,0 +1,47 @@
+* {
+    overflow: hidden;
+    background-color: rgb(20, 13, 58);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.head {
+    color: rgba(229, 230, 244, 0.783);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.screen {
+    height: 50%;
+    max-height: 30em;
+    width: 100%;
+    max-width: 60em;
+    background-color: rgba(117, 100, 204, 0.406);
+    margin: 0 auto;
+    border: 3px solid rgba(201, 194, 244, 0.648);
+    border-radius: 7px;
+}
+
+button {
+    background-color: red;
+}
+
+#ball {
+    position: relative;
+    --left: 0;
+    --top: 0;
+    background-color: rgba(224, 224, 240, 0.689);
+    left: calc(var(--left) * 1%);
+    top: calc(var(--top) * 1%);
+    width: max-content;
+    padding: .4em;
+    border-radius: 50%;
+}
