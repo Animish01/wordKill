@@ -20,10 +20,10 @@ body {
 }
 
 .screen {
-    height: 50%;
-    max-height: 30em;
-    width: 100%;
-    max-width: 60em;
+    height: 60%;
+    /* max-height: 30em; */
+    width: 80%;
+    /* max-width: 60em; */
     background-color: rgba(117, 100, 204, 0.406);
     margin: 0 auto;
     border: 3px solid rgba(201, 194, 244, 0.648);
@@ -34,14 +34,43 @@ button {
     background-color: red;
 }
 
-#ball {
-    position: relative;
+#ball1,
+#ball2,
+#ball3 {
+    position: absolute;
     --left: 0;
     --top: 0;
-    background-color: rgba(224, 224, 240, 0.689);
+    --display: block;
+    --ballBg: #e0e0f050;
+    background-color: var(--ballBg);
     left: calc(var(--left) * 1%);
     top: calc(var(--top) * 1%);
+    font-size: 1.4em;
+    letter-spacing: .3em;
+    font-weight: bold;
     width: max-content;
-    padding: .4em;
+    padding: .7em;
     border-radius: 50%;
+    display: var(--display);
+    box-shadow: 0 0 4px 3px rgba(239, 52, 39, 0.306);
+}
+
+#kill {
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+#kill button {
+    font-size: 1.3em;
+    border-radius: 1.5em;
+    padding: .2em .8em;
+    color: rgba(25, 2, 2, 0.817);
+}
+
+#kill input {
+    font-size: 1.3em;
+    border-radius: 1.5em;
+    padding: .2em .4em;
+    background-color: rgba(246, 247, 249, 0.813);
 }
