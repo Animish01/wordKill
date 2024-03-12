@@ -21,7 +21,7 @@ let scoreElement = document.getElementById('score');
 let score = 0;
 
 let speed = 0.006;
-const INCREMENT = 0.000008;
+const INCREMENT = 0.000006;
 let lastTime = null;
 
 kill.addEventListener('submit', (e) => {
