@@ -36,7 +36,6 @@ class Ball {
     moveBallRight(speed, time) {
         const currentX = this.position_x;
         this.position_x = (currentX - speed * time);
-        console.log(currentX);
 
         if (currentX < 0) {
             this.position_x = 100;
