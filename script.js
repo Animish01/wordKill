@@ -95,6 +95,8 @@ start.addEventListener('click', (e) => {
     name.style.setProperty('--display', 'none');
     body.style.setProperty('--bgcolor', '#140d3a');
     gameover.style.setProperty('--display', 'none');
+    kill[0].focus();
+    kill[0].innerText = '';
     score = 0;
     speed = 0.01;
     lastTime = undefined;
