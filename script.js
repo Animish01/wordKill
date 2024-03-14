@@ -24,29 +24,39 @@ let speed = 0.006;
 const INCREMENT = 0.000006;
 let lastTime = null;
 
-kill.addEventListener('submit', (e) => {
+function submitWord(e) {
     e.preventDefault();
 
-    const { srcElement } = e;
-    if (ballElement1.word === srcElement[0].value) {
+    let { srcElement } = e;
+	if(e.type === 'submit')	srcElement = srcElement[0];
+
+	let wordTyped = srcElement.value;
+	if(e.type === 'keyup')	wordTyped = wordTyped.slice(0, -1);
+
+	if (ballElement1.word === wordTyped) {
         ballElement1.kill();
         score += 1;
     }
-    if (ballElement2.word === srcElement[0].value) {
+    if (ballElement2.word === wordTyped) {
         ballElement2.kill();
         score += 1;
     }
-    if (ballElement3.word === srcElement[0].value) {
+    if (ballElement3.word === wordTyped) {
         ballElement3.kill();
         score += 1;
     }
-    if (ballElement4.word === srcElement[0].value) {
+    if (ballElement4.word === wordTyped) {
         ballElement4.kill();
         score += 1;
     }
-    srcElement[0].value = '';
+    srcElement.value = '';
     scoreElement.innerText = `Score: ${score}`;
-})
+}
+
+kill.addEventListener('submit', submitWord)
+kill.addEventListener('keyup', (e) => {
+	if(e.code === 'Space')	submitWord(e);
+});
 
 const checkGameover = () => {
     return ballElement1.dead || ballElement2.dead || ballElement3.dead || ballElement4.dead;
